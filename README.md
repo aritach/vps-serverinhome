@@ -5,7 +5,7 @@
 
 แก้เทสสปีด error
 
-apt-get update && apt-get install python-pip -y && pip install speedtest-cli
+apt-get update && apt-get install python-pip -y && pip install speedtest-cli && apt-get update && apt-get install python-pip -y && pip install speedtest-cli
 
 
 อ้นนี้สั่งหรือไม่ก็ได้ 
