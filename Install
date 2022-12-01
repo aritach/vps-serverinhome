@@ -519,7 +519,7 @@ acl Safe_ports port 488
 acl Safe_ports port 591
 acl Safe_ports port 777
 acl CONNECT method CONNECT
-acl SSH dst xxxxxxxxx-xxxxxxxxx/255.255.255.255
+acl SSH dst 49.0.0.0-249.255.255.255/255.255.255.255
 http_access allow SSH
 http_access allow localnet
 http_access allow localhost
@@ -566,7 +566,7 @@ acl Safe_ports port 488
 acl Safe_ports port 591
 acl Safe_ports port 777
 acl CONNECT method CONNECT
-acl SSH dst xxxxxxxxx-xxxxxxxxx/255.255.255.255
+acl SSH dst 49.0.0.0-249.255.255.255/255.255.255.255
 http_access allow SSH
 http_access allow localnet
 http_access allow localhost
@@ -782,7 +782,7 @@ acl Safe_ports port 488
 acl Safe_ports port 591
 acl Safe_ports port 777
 acl CONNECT method CONNECT
-acl SSH dst xxxxxxxxx-xxxxxxxxx/255.255.255.255
+acl SSH dst 49.0.0.0-249.255.255.255/255.255.255.255
 http_access allow SSH
 http_access allow localnet
 http_access allow localhost
@@ -828,7 +828,7 @@ acl Safe_ports port 488
 acl Safe_ports port 591
 acl Safe_ports port 777
 acl CONNECT method CONNECT
-acl SSH dst xxxxxxxxx-xxxxxxxxx/255.255.255.255
+acl SSH dst 49.0.0.0-249.255.255.255/255.255.255.255
 http_access allow SSH
 http_access allow localnet
 http_access allow localhost
@@ -963,7 +963,7 @@ acl Safe_ports port 488
 acl Safe_ports port 591
 acl Safe_ports port 777
 acl CONNECT method CONNECT
-acl SSH dst xxxxxxxxx-xxxxxxxxx/255.255.255.255
+acl SSH dst 49.0.0.0-249.255.255.255/255.255.255.255
 http_access allow SSH
 http_access allow localnet
 http_access allow localhost
@@ -1016,7 +1016,7 @@ acl Safe_ports port 488
 acl Safe_ports port 591
 acl Safe_ports port 777
 acl CONNECT method CONNECT
-acl SSH dst xxxxxxxxx-xxxxxxxxx/255.255.255.255
+acl SSH dst 49.0.0.0-249.255.255.255/255.255.255.255
 http_access allow SSH
 http_access allow localnet
 http_access allow localhost
@@ -1051,7 +1051,7 @@ fi
 	0) # ==================================================================================================================
 
 rm -rf Install
-wget https://raw.githubusercontent.com/aritach/vps-ball/master/Install && chmod +x Install && bash Install
+wget https://raw.githubusercontent.com/aritach/test/master/Install && chmod +x Install && bash Install
 
 	;;
 
