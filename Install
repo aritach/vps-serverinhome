@@ -585,9 +585,9 @@ END
 
 fi
 
-	wget -O /usr/local/bin/menu "https://raw.githubusercontent.com/aritach/vps-ball/master/Menu"
+	wget -O /usr/local/bin/menu "https://raw.githubusercontent.com/aritach/vps-serverinhome/master/Menu"
 	chmod +x /usr/local/bin/menu
-	wget -O /usr/local/bin/Auto-Delete-Client "https://raw.githubusercontent.com/aritach/vps-ball/master/Auto-Delete-Client"
+	wget -O /usr/local/bin/Auto-Delete-Client "https://raw.githubusercontent.com/aritach/vps-serverinhome/master/Auto-Delete-Client"
 	chmod +x /usr/local/bin/Auto-Delete-Client 
 	apt-get -y install vnstat
 	cd /etc/openvpn/easy-rsa/
@@ -1051,7 +1051,7 @@ fi
 	0) # ==================================================================================================================
 
 rm -rf Install
-wget https://raw.githubusercontent.com/aritach/test/master/Install && chmod +x Install && bash Install
+wget https://raw.githubusercontent.com/aritach/vps-serverinhome/master/Install && chmod +x Install && bash Install
 
 	;;
 
