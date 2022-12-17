@@ -267,7 +267,7 @@ else
 	echo ""
 	read -n1 -r -p "กด Enter 1 ครั้งเพื่อเริ่มทำการติดตั้ง หรือกด CTRL+C เพื่อยกเลิก"
 
-	apt-get update
+	
 	apt-get install openvpn iptables openssl ca-certificates -y
 
 	if [[ -d /etc/openvpn/easy-rsa/ ]]; then
