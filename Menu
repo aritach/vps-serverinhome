@@ -11,42 +11,49 @@ IP=$(wget -4qO- "http://whatismyip.akamai.com/")
 
 # Color
 GRAY='\033[1;33m'
-GREEN='\033[0;32m'
-NC='\033[0m'
+PUPLE='\033[1;35m'
+BLUE='\033[1;34m'
+RED='\033[1;31m'
+GREEN='\033[1;32m'
+#NC='\033[0m'
+NC='\033[1;35m'
+FAR='\033[1;36m'
 
 # Menu
 echo ""
-echo "  (\_(\ "
-echo " (=’ :’) :* Script by Mnm Ami"
-echo "  (,(”)(”) °.¸¸.•"
+echo -e ${RED}"================================================" 
+echo -e "\E[44;1;33m             ♻️   BALL INTERNET  ♻️               \E[0m"
+echo -e ${RED}"================================================"
+echo -e ${GRAY}"              ปรับแต่งสคริป โดย บอล"
 echo ""
 if [[ -e /usr/local/bin/Check-Thai ]]; then
-	echo -e "เมนูสคริปท์ ${GRAY}✿.｡.:* *.:｡✿*ﾟ’ﾟ･✿.｡.:*${NC}"
+	echo -e "${PUPLE}######### ${GRAY}เมนูสคริป ${PUPLE}#########${NC}"
 	echo ""
-	echo -e "|${GRAY} 1${NC}| เพิ่มบัญชีผู้ใช้ OpenVPN"
-	echo -e "|${GRAY} 2${NC}| เพิ่มบัญชีผู้ใช้ SSH (HTTP)"
-	echo -e "|${GRAY} 3${NC}| ลบบัญชีผู้ใช้"
-	echo -e "|${GRAY} 4${NC}| ตรวจสอบบัญชีผู้ใช้ทั้งหมด และตรวจสอบบัญชีที่กำลังเชื่อมต่อ"
-	echo -e "|${GRAY} 5${NC}| เปลี่ยนรหัสผ่านบัญชีผู้ใช้"
-	echo -e "|${GRAY} 6${NC}| เปลี่ยนวันหมดอายุบัญชีผู้ใช้"
-	echo -e "|${GRAY} 7${NC}| ตั้งค่าเวลารีบูทเซิฟเวอร์อัตโนมัติ"
-	echo -e "|${GRAY} 8${NC}| ทดสอบความเร็วอินเตอร์เน็ต"
-	echo -e "|${GRAY} 9${NC}| -"
-	echo -e "|${GRAY}10${NC}| ตรวจสอบแบนด์วิดท์"
-	echo -e "|${GRAY}11${NC}| ตรวจสอบแบนด์วิดท์แบบรายชั่วโมง"
-	echo -e "|${GRAY}12${NC}| ตรวจสอบแบนด์วิดท์ต่อบัญชี"
-	echo -e "|${GRAY}13${NC}| ปรับเปลี่ยนระบบของเซิฟเวอร์"
+	echo -e "${RED}|${GREEN} 1${RED}| ${FAR}เพิ่มบัญชี OpenVPN${FAR} "
+	echo -e "${RED}|${GREEN} 2${RED}| ${FAR}เพิ่มบัญชีผู้ใช้ SSH (HTTP)${FAR} "
+	echo -e "${RED}|${GREEN} 3${RED}| ${FAR}ลบบัญชีผู้ใช้${FAR} "
+	echo -e "${RED}|${GREEN} 4${RED}| ${FAR}ตรวจสอบบัญชีผู้ใช้ทั้งหมด และตรวจสอบบัญชีที่กำลังเชื่อมต่อ${FAR} "
+	echo -e "${RED}|${GREEN} 5${RED}| ${FAR}เปลี่ยนรหัสผ่านบัญชีผู้ใช้${FAR} "
+	echo -e "${RED}|${GREEN} 6${RED}| ${FAR}เปลี่ยนวันหมดอายุบัญชีผู้ใช้${FAR} "
+	echo -e "${RED}|${GREEN} 7${RED}| ${FAR}ตั้งค่าเวลารีบูทเซิฟเวอร์อัตโนมัติ${FAR} "
+	echo -e "${RED}|${GREEN} 8${RED}| ${FAR}ทดสอบความเร็วอินเตอร์เน็ต${FAR} "
+	echo -e "${RED}|${GREEN} 9${RED}| -"
+	echo -e "${RED}|${GREEN}10${RED}| ${FAR}ตรวจสอบแบนด์วิดท์${FAR} "
+	echo -e "${RED}|${GREEN}11${RED}| ${FAR}ตรวจสอบแบนด์วิดท์แบบรายชั่วโมง${FAR} "
+	echo -e "${RED}|${GREEN}12${RED}| ${FAR}ตรวจสอบแบนด์วิดท์ต่อบัญชี${FAR} "
+	echo -e "${RED}|${GREEN}13${RED}| ${FAR}ปรับเปลี่ยนระบบของเซิฟเวอร์${FAR} "
 	if [[ $CHECKSYSTEM ]]; then
-		echo -e "|${GRAY}14${NC}| แบนและปลดแบนบัญชีผู้ใช้"
+		echo -e "${RED}|${GREEN}14${RED}| แบนและปลดแบนบัญชีผู้ใช้${FAR} "
 	else
-		echo -e "|${GRAY}14${NC}| แบนและปลดแบนบัญชีผู้ใช้ ${GRAY}ใช้งานไม่ได้กับเซิฟเวอร์ระบบปัจจุบัน  ${NC}"
+		echo -e "${RED}|${GREEN}14${RED}| แบนและปลดแบนบัญชีผู้ใช้ ${RED}ใช้งานไม่ได้กับเซิฟเวอร์ระบบปัจจุบัน  ${NC} "
 	fi
-	echo -e "|${GRAY}15${NC}| ปรับความเร็วอินเตอร์เน็ต"
-	echo -e "|${GRAY}16${NC}| เปิด-ปิด-รีสตาร์ท การทำงานของระบบ"
-	echo -e "|${GRAY}17${NC}| แก้ไขคอนฟิกต่างๆในระบบ"
+	echo -e "${RED}|${GREEN}15${RED}| ${FAR}ปรับความเร็วอินเตอร์เน็ต${FAR} "
+	echo -e "${RED}|${GREEN}16${RED}| ${FAR}เปิด-ปิด-รีสตาร์ท การทำงานของระบบ${FAR} "
+	echo -e "${RED}|${GREEN}17${RED}| ${FAR}แก้ไขคอนฟิกต่างๆในระบบ${FAR} "
 	echo ""
-	echo -e "|${GRAY} 0${NC}| อัพเดตเมนูสคริปท์"
-	echo -e "|${GRAY}00${NC}| เปลี่ยนเป็นภาษาอังกฤษ"
+	echo -e "${RED}|${GREEN} 0${RED}| ${FAR}อัพเดตเมนูสคริปท์${FAR} "
+	echo -e "${RED}|${GREEN}00${RED}| ${FAR}เปลี่ยนเป็นภาษาอังกฤษ${FAR} "
+echo -e ${BLUE}"--------------------------------------------"
 
 elif [[ ! -e /usr/local/bin/Check-Thai ]]; then
 	echo -e "MENU SCRIPT ${GRAY}✿.｡.:* *.:｡✿*ﾟ’ﾟ･✿.｡.:*${NC}"
@@ -100,7 +107,7 @@ do
 done < /etc/passwd
 
 if [[ -e /usr/local/bin/Check-Thai ]]; then
-	echo -e "แบนด์วิดท์ที่ใช้ไปทั้งหมด ${GRAY}$TOTALBW${NC}${GRAY}B${NC}  |  กำลังเชื่อมต่อ ${GRAY}$ON${NC} บัญชี"
+	echo -e "แบนด์วิดท์ใช้ไปทั้งหมด ${GRAY}$TOTALBW${NC}${GRAY}B${NC}  |  กำลังเชื่อมต่อ ${GRAY}$ON${NC} บัญชี "
 elif [[ ! -e /usr/local/bin/Check-Thai ]]; then
 	echo -e "TOTAL BANDWIDTH ${GRAY}$TOTALBW${NC}${GRAY}B${NC}  |  CLIENT ONLINE NOW ${GRAY}$ON${NC} CLIENT"
 fi
@@ -108,7 +115,7 @@ echo ""
 bash Auto-Delete-Client
 echo ""
 if [[ -e /usr/local/bin/Check-Thai ]]; then
-	read -p "เลือกหัวข้อเมนูที่ต้องการใช้งาน : " MENU
+        read -p "Select a Menu Script : " MENU
 elif [[ ! -e /usr/local/bin/Check-Thai ]]; then
 	read -p "Select a Menu Script : " MENU
 fi
@@ -119,7 +126,7 @@ case $MENU in
 
 if [[ $CHECKSYSTEM ]]; then
 	echo ""
-	read -p "ชื่อบัญชีที่ต้องการสร้าง : " -e CLIENT
+	read -p "Add user : " -e CLIENT
 
 	if [ $? -eq 0 ]; then
 		read -p "รหัสผ่าน : " -e PASSWORD
@@ -160,7 +167,7 @@ if [[ $CHECKSYSTEM ]]; then
 else
 
 	echo ""
-	read -p "ชื่อบัญชีที่ต้องการสร้าง : " -e CLIENT
+	read -p "Add user : " -e CLIENT
 
 	if [[ -e /etc/openvpn/easy-rsa/pki/private/$CLIENT.key ]]; then
 		echo ""
@@ -223,7 +230,7 @@ fi
 	2) # ==================================================================================================================
 
 	echo ""
-	read -p "ชื่อบัญชีที่ต้องการสร้าง : " -e CLIENT
+	read -p "Add user : " -e CLIENT
 
 	if [ $? -eq 0 ]; then
 		read -p "รหัสผ่าน : " -e PASSWORD
@@ -266,7 +273,7 @@ fi
 	3) # ==================================================================================================================
 
 echo ""
-read -p "ชื่อบัญชีที่ต้องการลบ : " CLIENT
+read -p "how user remove : " CLIENT
 egrep "^$CLIENT" /etc/passwd >/dev/null
 
 if [ $? -eq 0 ]; then
@@ -274,7 +281,7 @@ if [ $? -eq 0 ]; then
 		echo ""
 		userdel -f $CLIENT
 		echo ""
-		echo -e "ชื่อบัญชี ${GRAY}$CLIENT${NC} ถูกลบออกจากระบบเรียบร้อยแล้ว"
+		echo -e "ชื่อบัญชี ${FAR}$CLIENT${NC} ถูกลบออกจากระบบเรียบร้อยแล้ว"
 		echo ""
 		exit
 	else
@@ -290,7 +297,7 @@ if [ $? -eq 0 ]; then
 		cp /etc/openvpn/easy-rsa/pki/crl.pem /etc/openvpn/crl.pem
 		chown nobody:$GROUPNAME /etc/openvpn/crl.pem
 		echo ""
-		echo -e "ชื่อบัญชี ${GRAY}$CLIENT${NC} ถูกลบออกจากระบบเรียบร้อยแล้ว"
+		echo -e "ชื่อบัญชี ${FAR}$CLIENT${NC} ถูกลบออกจากระบบเรียบร้อยแล้ว"
 		echo ""
 		exit
 	fi
@@ -307,12 +314,10 @@ fi
 
 clear
 echo ""
-echo "  (\_(\ "
-echo " (=’ :’) :* Script by Mnm Ami"
-echo "  (,(”)(”) °.¸¸.•"
+echo -e "${RED}######### ${FAR}ผู้ใช้งานทั้งหมด ${RED}#########${NC}"
 echo ""
 echo ""
-echo "ลำดับ   ชื่อบัญชีผู้ใช้        สถานะ      วันหมดอายุ"
+echo -e "${FAR}ลำดับ   ชื่อบัญชีผู้ใช้        สถานะ      วันหมดอายุ ${NC}"
 echo ""
 C=1
 ON=0
@@ -327,10 +332,10 @@ do
 	ONLINE="$(cat /etc/openvpn/openvpn-status.log | grep -Eom 1 $ACCOUNT | grep -Eom 1 $ACCOUNT)"
 	if [[ $ID -ge 1000 ]]; then
 		if [[ -z $ONLINE ]]; then
-			printf "%-6s %-15s %-20s %-3s\n" "$C" "$ACCOUNT" "$CLIENTOFFLINE" "$EXP"
+			printf "%-6s %-15s %-20s %-3s\n" "$C" "$ACCOUNT" "$CLIENTOFFLINE"   "$EXP"
 			OFF=$((OFF+1))
 		else
-			printf "%-6s %-15s %-20s %-3s\n" "$C" "$ACCOUNT" "$CLIENTONLINE" "$EXP"
+			printf "%-6s %-15s %-20s %-3s\n" "$C" "$ACCOUNT" "$CLIENTONLINE"   "$EXP"
 			ON=$((ON+1))
 		fi
 			C=$((C+1))
@@ -339,7 +344,7 @@ done < /etc/passwd
 TOTAL="$(awk -F: '$3 >= '1000' && $1 != "nobody" {print $1}' /etc/passwd | wc -l)"
 echo ""
 echo ""
-echo -e "กำลังเชื่อมต่อ ${GREEN}$ON${NC}  |  ไม่ได้เชื่อมต่อ ${GRAY}$OFF${NC}  |  บัญชีทั้งหมด $TOTAL"
+echo -e "กำลังเชื่อมต่อ ${GREEN}$ON${NC}  |  ไม่ได้เชื่อมต่อ ${GRAY}$OFF${NC}  |  บัญชีทั้งหมด ${FAR}$TOTAL${NC}"
 echo ""
 exit
 
@@ -390,12 +395,12 @@ exit
 	6) # ==================================================================================================================
 
 echo ""
-read -p "ชื่อบัญชีที่ต้องการเปลี่ยนวันหมดอายุ : " -e CLIENT
+read -p "Select username : " -e CLIENT
 
 if [ $? -eq 0 ]; then
 	EXP="$(chage -l $CLIENT | grep "Account expires" | awk -F": " '{print $2}')"
 	echo ""
-	echo -e "ชื่อบัญชีนี้หมดอายุในวันที่ ${GRAY}$EXP${NC}"
+	echo -e "ชื่อบัญชีนี้หมดอายุในวันที่ ${GREEN}$EXP${NC}"
 	echo ""
 	read -p "เปลี่ยนวันหมดอายุ : " -e TimeActive
 	userdel $CLIENT
@@ -403,8 +408,8 @@ if [ $? -eq 0 ]; then
 	EXP="$(chage -l $CLIENT | grep "Account expires" | awk -F": " '{print $2}')"
 	echo -e "$CLIENT\n$CLIENT\n"|passwd $CLIENT &> /dev/null
 	echo ""
-	echo "ชื่อบัญชี : $CLIENT"
-	echo "หมดวันหมดในวันที่ : $EXP"
+	echo "${GREEN}ชื่อบัญชี : $CLIENT"
+	echo "${GREEN}หมดวันหมดในวันที่ : $EXP"
 	echo ""
 	exit
 
@@ -439,23 +444,19 @@ fi
 
 clear
 echo ""
-echo "  (\_(\ "
-echo " (=’ :’) :* Script by Mnm Ami"
-echo "  (,(”)(”) °.¸¸.•"
+echo -e "${RED}######### ${FAR}ตั้งเวลารีบุทเซิฟเวอร์ ${RED}#########${NC}"
 echo ""
-echo -e "${GRAY}ตั้งค่าเวลารีบูทเซิฟเวอร์อัตโนมัติ ${NC} "
+echo -e "${RED}|${GREEN}1${RED}| ${FAR}รีบูททุกๆ  1 ชั่วโมง"
+echo -e "${RED}|${GREEN}2${RED}| ${FAR}รีบูททุกๆ  6 ชั่วโมง"
+echo -e "${RED}|${GREEN}3${RED}| ${FAR}รีบูททุกๆ 12 ชั่วโมง"
+echo -e "${RED}|${GREEN}4${RED}| ${FAR}รีบูททุกๆ  1 วัน"
+echo -e "${RED}|${GREEN}5${RED}| ${FAR}รีบูททุกๆ  7 วัน"
+echo -e "${RED}|${GREEN}6${RED}| ${FAR}รีบูททุกๆ 30 วัน"
+echo -e "${RED}|${GREEN}7${RED}| ${FAR}หยุดการรีบูทเซิฟเวอร์"
+echo -e "${RED}|${GREEN}8${RED}| ${FAR}ตรวจสอบดูบันทึกการรีบูทเซิฟเวอร์"
+echo -e "${RED}|${GREEN}9${RED}| ${FAR}ลบบันทึกการรีบูทเซิฟเวอร์"
 echo ""
-echo -e "|${GRAY}1${NC}| รีบูททุกๆ  1 ชั่วโมง"
-echo -e "|${GRAY}2${NC}| รีบูททุกๆ  6 ชั่วโมง"
-echo -e "|${GRAY}3${NC}| รีบูททุกๆ 12 ชั่วโมง"
-echo -e "|${GRAY}4${NC}| รีบูททุกๆ  1 วัน"
-echo -e "|${GRAY}5${NC}| รีบูททุกๆ  7 วัน"
-echo -e "|${GRAY}6${NC}| รีบูททุกๆ 30 วัน"
-echo -e "|${GRAY}7${NC}| หยุดการรีบูทเซิฟเวอร์"
-echo -e "|${GRAY}8${NC}| ตรวจสอบดูบันทึกการรีบูทเซิฟเวอร์"
-echo -e "|${GRAY}9${NC}| ลบบันทึกการรีบูทเซิฟเวอร์"
-echo ""
-read -p "เลือกหัวข้อที่ต้องการใช้งาน : " REBOOT
+read -p "Select a Menu Script : " REBOOT
 
 case $REBOOT in
 
@@ -565,7 +566,7 @@ if [[ -e /usr/local/bin/speedtest ]]; then
 	clear
 	speedtest --share
 elif [[ ! -e /usr/local/bin/speedtest ]]; then
-	wget -O /usr/local/bin/speedtest "https://raw.githubusercontent.com/aritach/vps-serverinhome/master/Speedtest"
+	wget -O /usr/local/bin/speedtest "https://raw.githubusercontent.com/aritach/vps-ball/master/Speedtest"
 	chmod +x /usr/local/bin/speedtest
 	clear
 	speedtest --share
@@ -595,12 +596,9 @@ TXTOTAL=$(vnstat -i $INTERFACE | grep "tx:" | awk '{print $5" "substr ($9, 1, 1)
 
 clear
 echo ""
-echo "  (\_(\ "
-echo " (=’ :’) :* Script by Mnm Ami"
-echo "  (,(”)(”) °.¸¸.•"
+echo -e "${RED}######### ${FAR}แบนด์วิดท์ทั้งหมด ${RED}#########${NC}"
 echo ""
 if [[ -e /usr/local/bin/Check-Thai ]]; then
-	echo -e "แบนด์วิดท์ ${GRAY}✿.｡.:* *.:｡✿*ﾟ’ﾟ･✿.｡.:*${NC}"
 	echo ""
 	echo -e "วันนี้ ${GRAY}$TODAY${NC}"
 	echo -e "เมื่อวานนี้ ${GRAY}$YESTERDAY${NC}"
@@ -783,9 +781,9 @@ CONRX24=$(echo "scale=2;$RX24 / 1000000" | bc)
 CONTX24=$(echo "scale=2;$TX24 / 1000000" | bc)
 
 clear
-NOW=`echo -e "${GRAY}เวลาปัจจุบัน${NC}"`
+NOW=`echo -e "${GREEN}เวลาปัจจุบัน${NC}"`
 echo ""
-echo -e "${GRAY}ตัวเลขรับและส่งข้อมูลที่แสดงจะมีหน่วยวัดปริมาณเป็น Gigabyte ทั้งหมด${NC}"
+echo -e "${FAR}ตัวเลขรับและส่งข้อมูลที่แสดงจะมีหน่วยวัดปริมาณเป็น Gigabyte ทั้งหมด${NC}"
 printf "%-7s %-7s %-10s\n" "เวลา" "รับข้อมูล" "ส่งข้อมูล"
 echo ""
 printf "%-3s %-6s %-10s\n" "$DATE1" "$CONRX1" "$CONTX1"
@@ -821,20 +819,18 @@ exit
 
 if [[ ! -e /usr/local/bin/Banwidth-Per-Client ]]; then
 	apt-get install python
-	wget -O /usr/local/bin/Banwidth-Per-Client "https://raw.githubusercontent.com/aritach/vps-serverinhome/master/Banwidth-Per-Client"
+	wget -O /usr/local/bin/Banwidth-Per-Client "https://raw.githubusercontent.com/aritach/vps-ball/master/Banwidth-Per-Client"
 	chmod +x /usr/local/bin/Banwidth-Per-Client
 	clear
 	echo ""
-	echo -e "Script by ${GRAY}Weerawat Khlaolamom (P'Beer) ${NC}"
-	echo -e "FB Group : ${GRAY}https://www.facebook.com/groups/143457819538014/ ${NC}"
+	echo -e "${RED}######### ${FAR}การใช้งานแบนวิดท์ แต่ละบัญชี ${RED}#########${NC}"
 	echo ""
 	Banwidth-Per-Client
 	echo ""
 else
 	clear
 	echo ""
-	echo -e "Script by ${GRAY}Weerawat Khlaolamom (P'Beer) ${NC}"
-	echo -e "FB Group : ${GRAY}https://www.facebook.com/groups/143457819538014/ ${NC}"
+	echo -e "${RED}######### ${FAR}การใช้งานแบนวิดท์ แต่ละบัญชี ${RED}#########${NC}"
 	echo ""
 	Banwidth-Per-Client
 	echo ""
@@ -846,17 +842,13 @@ fi
 
 clear
 echo ""
-echo "  (\_(\ "
-echo " (=’ :’) :* Script by Mnm Ami"
-echo "  (,(”)(”) °.¸¸.•"
+echo -e "${RED}######### ${FAR}เปลี่ยนระบบเซิฟเวอร์ ${RED}#########${NC}"
 echo ""
-echo -e "${GRAY}ปรับเปลี่ยนระบบของเซิฟเวอร์ ${NC} "
+echo -e "${RED}|${GREEN}1${RED}| ${FAR}1 ไฟล์เชื่อมต่อได้ 1 เครื่องเท่านั้น สามารถสร้างไฟล์เพิ่มได้ "
+echo -e "${RED}|${GREEN}2${RED}| ${FAR}1 ไฟล์เชื่อมต่อได้หลายเครื่อง แต่ต้องสร้างบัญชีเพื่อใช้เชื่อมต่อ"
+echo -e "${RED}|${GREEN}3${RED}| ${FAR}1 ไฟล์เชื่อมต่อได้ไม่จำกัดเครื่อง"
 echo ""
-echo -e "|${GRAY}1${NC}| 1 ไฟล์เชื่อมต่อได้ 1 เครื่องเท่านั้น สามารถสร้างไฟล์เพิ่มได้"
-echo -e "|${GRAY}2${NC}| 1 ไฟล์เชื่อมต่อได้หลายเครื่อง แต่ต้องสร้างบัญชีเพื่อใช้เชื่อมต่อ"
-echo -e "|${GRAY}3${NC}| 1 ไฟล์เชื่อมต่อได้ไม่จำกัดเครื่อง"
-echo ""
-read -p "เลือกหัวข้อที่ต้องการใช้งาน : " CHANGESYSTEMSERVER
+read -p "Select a Menu Script : " CHANGESYSTEMSERVER
 
 case $CHANGESYSTEMSERVER in
 
@@ -868,7 +860,7 @@ sed -i '28d' /etc/openvpn/server.conf
 sed -i '20d' /etc/openvpn/client-common.txt
 echo "client-to-client" >> /etc/openvpn/server.conf
 echo ""
-echo "ปรับเปลี่ยนระบบของเซิฟเวอร์เป็นรูปแบบที่ 1 เรียบร้อย"
+echo -e "${GREEN}ปรับเปลี่ยนระบบของเซิฟเวอร์เป็นรูปแบบที่ 1 เรียบร้อย${NC}"
 echo ""
 service openvpn restart
 
@@ -891,7 +883,7 @@ else
 fi
 echo "auth-user-pass" >> /etc/openvpn/client-common.txt
 echo ""
-echo "ปรับเปลี่ยนระบบของเซิฟเวอร์เป็นรูปแบบที่ 2 เรียบร้อย"
+echo -e "${GREEN}ปรับเปลี่ยนระบบของเซิฟเวอร์เป็นรูปแบบที่ 2 เรียบร้อย${NC}"
 echo ""
 service openvpn restart
 
@@ -905,7 +897,7 @@ sed -i '28d' /etc/openvpn/server.conf
 sed -i '20d' /etc/openvpn/client-common.txt
 echo "duplicate-cn" >> /etc/openvpn/server.conf
 echo ""
-echo "ปรับเปลี่ยนระบบของเซิฟเวอร์เป็นรูปแบบที่ 3 เรียบร้อย"
+echo -e "${GREEN}ปรับเปลี่ยนระบบของเซิฟเวอร์เป็นรูปแบบที่ 3 เรียบร้อย${NC}"
 echo ""
 service openvpn restart
 
@@ -926,16 +918,12 @@ fi
 
 clear
 echo ""
-echo "  (\_(\ "
-echo " (=’ :’) :* Script by Mnm Ami"
-echo "  (,(”)(”) °.¸¸.•"
-echo ""
 echo -e "${GRAY}แบนและปลดแบนบัญชีผู้ใช้ ${NC} "
 echo ""
 echo -e "|${GRAY}1${NC}| แบนบัญชีผู้ใช้"
 echo -e "|${GRAY}2${NC}| ปลดแบนบัญชีผู้ใช้"
 echo ""
-read -p "เลือกหัวข้อที่ต้องการใช้งาน : " BandUB
+read -p "Select a Menu Script : " BandUB
 
 case $BandUB in
 
@@ -1010,24 +998,20 @@ esac
 
 clear
 echo ""
-echo "  (\_(\ "
-echo " (=’ :’) :* Script by Apiwat Panyoi"
-echo "  (,(”)(”) °.¸¸.• Edit the Script by Mnm Ami"
+echo -e "${RED}######### ${FAR}ปรับความเร็วอินเตอร์เน็ต ${RED}#########${NC}"
 echo ""
-echo -e "${GRAY}ปรับความเร็วอินเตอร์เน็ต ${NC} "
+echo -e "${RED}|${GREEN}1${RED}| ${FAR}เปิดใช้งานการปรับแต่งความเร็วอินเทอร์เน็ต"
+echo -e "${RED}|${GREEN}2${RED}| ${FAR}ปิดใช้งานการปรับแต่งความเร็วอินเทอร์เน็ต"
 echo ""
-echo -e "|${GRAY}1${NC}| เปิดใช้งานการปรับแต่งความเร็วอินเทอร์เน็ต"
-echo -e "|${GRAY}2${NC}| ปิดใช้งานการปรับแต่งความเร็วอินเทอร์เน็ต"
-echo ""
-read -p "เลือกหัวข้อที่ต้องการใช้งาน : " LIMITINTERNET
+read -p "Select a Menu Script : " LIMITINTERNET
 
 case $LIMITINTERNET in
 
 	1)
 
 echo ""
-echo -e "|${GRAY}1${NC}| Megabyte (Mbps)"
-echo -e "|${GRAY}2${NC}| Kilobyte (Kbps)"
+echo -e "${RED}|${GREEN}1${RED}| ${FAR}Megabyte (Mbps)"
+echo -e "${RED}|${GREEN}2${RED}| ${FAR}Kilobyte (Kbps)"
 echo ""
 read -p "กรุณาเลือกหน่วยวัดความเร็วอินเทอร์เน็ต : " -e PERSECOND
 case $PERSECOND in
@@ -1041,7 +1025,7 @@ esac
 
 echo ""
 echo ""
-echo -e "วิธีการใส่ : เช่นต้องการให้มีความเร็ว 10Mbps ให้ใส่เลข ${GRAY}10${NC}"
+echo -e "${RED}วิธีการใส่${NC} : เช่นต้องการให้มีความเร็ว 10Mbps ให้ใส่เลข ${GRAY}10${NC}"
 echo -e "         หากต้องการให้มีความเร็ว 512Kbps ให้ใส่เลข ${GRAY}512${NC}"
 echo ""
 read -p "ใส่จำนวนความเร็วการดาวน์โหลด : " -e CHDL
@@ -1093,35 +1077,31 @@ esac
 
 clear
 echo ""
-echo "  (\_(\ "
-echo " (=’ :’) :* Script by Mnm Ami"
-echo "  (,(”)(”) °.¸¸.•"
+echo -e "${RED}######### ${FAR}เปิด-ปิด-รีสตาร์ท ระบบ ${RED}#########${NC}"
 echo ""
-echo -e "เปิด-ปิด-รีสตาร์ท การทำงานของระบบ ${GRAY}✿.｡.:* *.:｡✿*ﾟ’ﾟ･✿.｡.:*${NC}"
+echo -e "|${GREEN}1${NC}| OPENVPN"
+echo -e "|${GREEN}2${NC}| SSH DROPBEAR"
+echo -e "|${GREEN}3${NC}| SQUID PROXY"
 echo ""
-echo -e "|${GRAY}1${NC}| OPENVPN"
-echo -e "|${GRAY}2${NC}| SSH DROPBEAR"
-echo -e "|${GRAY}3${NC}| SQUID PROXY"
-echo ""
-read -p "เลือกหัวข้อที่ต้องการใช้งาน : " SERVICE
+read -p "Select a Menu Script : " SERVICE
 
 case $SERVICE in
 
 	1)
 
 	echo ""
-	echo -e "	|${GRAY}1${NC}| เปิด"
-	echo -e "	|${GRAY}2${NC}| ปิด"
-	echo -e "	|${GRAY}3${NC}| รีสตาร์ท"
+	echo -e "	${RED}|${GREEN}1${RED}| ${FAR}เปิด"
+	echo -e "	${RED}|${GREEN}2${RED}| ${FAR}ปิด"
+	echo -e "	${RED}|${GREEN}3${RED}| ${FAR}รีสตาร์ท"
 	echo ""
-	read -p "	เลือกหัวข้อที่ต้องการใช้งาน : " SERVICEOPENVPN
+	read -p "	Select a Menu Script : " SERVICEOPENVPN
 
 	case $SERVICEOPENVPN in
 
 		1)
 	service openvpn start
 	echo ""
-	echo -e "	OpenVPN ${GRAY}STARTED${NC}"
+	echo -e "	${GREEN}เรื่มทำงาน OPENVPN แล้ว${NC}"
 	echo ""
 	exit
 		;;
@@ -1129,7 +1109,7 @@ case $SERVICE in
 		2)
 	service openvpn stop
 	echo ""
-	echo -e "	OpenVPN ${GRAY}STOPPED${NC}"
+	echo -e "	${RED}หยุดการทำงาน OPENVPN แล้ว{NC}"
 	echo ""
 	exit
 		;;
@@ -1137,7 +1117,7 @@ case $SERVICE in
 		3)
 	service openvpn restart
 	echo ""
-	echo -e "	OpenVPN ${GRAY}RESTARTED${NC}"
+	echo -e "       ${GREEN}รีสตาร์ท OPENVPN เรียบร้อยแล้ว${NC}"
 	echo ""
 	exit
 		;;
@@ -1149,11 +1129,11 @@ case $SERVICE in
 	2)
 
 	echo ""
-	echo -e "	|${GRAY}1${NC}| เปิด"
-	echo -e "	|${GRAY}2${NC}| ปิด ${GRAY}หากปิดการทำงานจะไม่สามารถเข้าสู่เทอมินอลได้ ${NC} "
-	echo -e "	|${GRAY}3${NC}| รีสตาร์ท"
+	echo -e "	${RED}|${GREEN}1${RED}| ${FAR}เปิด"
+	echo -e "	${RED}|${GREEN}2${RED}| ${FAR}ปิด ${GRAY}หากปิดการทำงานจะไม่สามารถเข้าสู่เทอมินอลได้ ${NC} "
+	echo -e "	${RED}|${GREEN}3${RED}| ${FAR}รีสตาร์ท"
 	echo ""
-	read -p "	เลือกหัวข้อที่ต้องการใช้งาน : " SERVICEDROPBEAR
+	read -p "	Select a Menu Script : " SERVICEDROPBEAR
 
 	case $SERVICEDROPBEAR in
 
@@ -1210,11 +1190,11 @@ case $SERVICE in
 	3)
 
 	echo ""
-	echo -e "	|${GRAY}1${NC}| เปิด"
-	echo -e "	|${GRAY}2${NC}| ปิด"
-	echo -e "	|${GRAY}3${NC}| รีสตาร์ท"
+	echo -e "	${RED}|${GREEN}1${RED}| ${FAR}เปิด"
+	echo -e "	${RED}|${GREEN}2${RED}| ${FAR}ปิด"
+	echo -e "	${RED}|${GREEN}3${RED}| ${FAR}รีสตาร์ท"
 	echo ""
-	read -p "	เลือกหัวข้อที่ต้องการใช้งาน : " SERVICEPROXY
+	read -p "	Select a Menu Script : " SERVICEPROXY
 
 	case $SERVICEPROXY in
 
@@ -1228,7 +1208,7 @@ case $SERVICE in
 		else
 			service squid start
 			echo ""
-			echo -e "	Squid Proxy ${GRAY}STARTED${NC}"
+			echo -e "	Squid Proxy ${GREEN}เริ่มต้นทำงานแล้ว${NC}"
 			echo ""
 			exit
 		fi
@@ -1241,7 +1221,7 @@ case $SERVICE in
 		else
 			service squid3 start
 			echo ""
-			echo -e "	Squid Proxy ${GRAY}STARTED${NC}"
+			echo -e "	Squid Proxy ${GREEN}เริ่มต้นทำงานแล้ว${NC}"
 			echo ""
 			exit
 		fi
@@ -1258,7 +1238,7 @@ case $SERVICE in
 		else
 			service squid stop
 			echo ""
-			echo -e "	Squid Proxy ${GRAY}STOPPED${NC}"
+			echo -e "	Squid Proxy ${RED}หยุดแล้ว${NC}"
 			echo ""
 			exit
 		fi
@@ -1271,7 +1251,7 @@ case $SERVICE in
 		else
 			service squid3 stop
 			echo ""
-			echo -e "	Squid Proxy ${GRAY}STOPPED${NC}"
+			echo -e "	Squid Proxy ${RED}หยุดแล้ว${NC}"
 			echo ""
 			exit
 		fi
@@ -1288,7 +1268,7 @@ case $SERVICE in
 		else
 			service squid restart
 			echo ""
-			echo -e "	Squid Proxy ${GRAY}RESTARTED${NC}"
+			echo -e "	Squid Proxy ${FAR}รีสตาร์ทเรียบร้อยแล้ว${NC}"
 			echo ""
 			exit
 		fi
@@ -1301,7 +1281,7 @@ case $SERVICE in
 		else
 			service squid3 restart
 			echo ""
-			echo -e "	Squid Proxy ${GRAY}RESTARTED${NC}"
+			echo -e "	Squid Proxy ${FAR}รีสตาร์ทเรียบร้อยแล้ว${NC}"
 			echo ""
 			exit
 		fi
@@ -1320,19 +1300,15 @@ esac
 
 clear
 echo ""
-echo "  (\_(\ "
-echo " (=’ :’) :* Script by Mnm Ami"
-echo "  (,(”)(”) °.¸¸.•"
+echo -e "${RED}######### ${FAR}แก้ไขคอนฟิก ระบบ ${RED}#########${NC}"
 echo ""
-echo -e "แก้ไขคอนฟิกต่างๆในระบบ ${GRAY}✿.｡.:* *.:｡✿*ﾟ’ﾟ･✿.｡.:*${NC}"
-echo ""
-echo -e "|${GRAY}1${NC}| OPENVPN ไฟล์ต้นแบบการสร้างคอนฟิก"
-echo -e "|${GRAY}2${NC}| OPENVPN ไฟล์ข้อมูลเซิฟเวอร์"
-echo -e "|${GRAY}3${NC}| SQUID PROXY ไฟล์รายละเอียดของพร็อกซี่"
-echo -e "|${GRAY}4${NC}| MENU ไฟล์สคริปท์ของเมนู"
+echo -e "${RED}|${GREEN}1${RED}| ${FAR}OPENVPN ไฟล์ต้นแบบการสร้างคอนฟิก "
+echo -e "${RED}|${GREEN}2${RED}| ${FAR}OPENVPN ไฟล์ข้อมูลเซิฟเวอร์ "
+echo -e "${RED}|${GREEN}3${RED}| ${FAR}SQUID PROXY ไฟล์รายละเอียดของพร็อกซี่ "
+echo -e "${RED}|${GREEN}4${RED}| ${FAR}MENU ไฟล์สคริปท์ของเมนู "
 echo ""
 echo ""
-read -p "เลือกหัวข้อที่ต้องการใช้งาน : " EDIT
+read -p "Select a Menu Script : " EDIT
 
 case $EDIT in
 
@@ -1365,10 +1341,10 @@ esac
 	0) # ==================================================================================================================
 
 rm -f /usr/local/bin/menu
-wget -O /usr/local/bin/menu "https://raw.githubusercontent.com/aritach/vps-serverinhome/master/Menu"
+wget -O /usr/local/bin/menu "https://raw.githubusercontent.com/aritach/vps-ball/master/Menu"
 chmod +x /usr/local/bin/menu
 rm -f /usr/local/bin/Auto-Delete-Client 
-wget -O /usr/local/bin/Auto-Delete-Client "https://raw.githubusercontent.com/aritach/vps-serverinhome/master/Auto-Delete-Client"
+wget -O /usr/local/bin/Auto-Delete-Client "https://raw.githubusercontent.com/aritach/vps-ball/master/Auto-Delete-Client"
 chmod +x /usr/local/bin/Auto-Delete-Client
 menu
 
